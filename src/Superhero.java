@@ -15,10 +15,6 @@ public class Superhero {
         this.isHuman = isHuman;
         this.strength = strength;
     }
-
-    //public Superhero(){
-
-    //}
     public String getName() {
         return name;
     }
@@ -34,11 +30,9 @@ public class Superhero {
     public String getIsHuman() {
         return isHuman;
     }
-
     public String getStrength() {
         return strength;
     }
-
     public void setName(String n) {
         name = n;
     }
@@ -54,10 +48,7 @@ public class Superhero {
     public void getIsHuman(String i) {
         isHuman = i;
     }
-
     public void getStrength(String s) {
         strength = s;
     }
-
-
 }

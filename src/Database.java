@@ -12,7 +12,7 @@ public class Database {
     public void tilføjSuperhelt(String name, String realName, String superPower, int yearCreated, String isHuman, String strength) {
         helteListe[count++] = new Superhero(name, realName, superPower, yearCreated, isHuman, strength);
     }
-    public Superhero getHero1(){
+   /* public Superhero getHero1(){
         return helteListe[0];
     }
     public Superhero getHero2(){
@@ -26,7 +26,7 @@ public class Database {
     }
     public Superhero getHero5(){
         return helteListe[4];
-    }
+    }*/
 
 
 }

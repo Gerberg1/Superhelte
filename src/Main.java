@@ -6,11 +6,7 @@ public class Main {
 
 
         Database helteHold = new Database();
-
-
         Scanner keyboard = new Scanner(System.in);
-
-
 
         int i = 0;
 
@@ -40,34 +36,21 @@ public class Main {
 
 
                 helteHold.tilføjSuperhelt(Navn, virkeligeNavn, superKraft, årSkabt, erMenneske, styrke);
+                i++;
 
-            }
-
-            else if (valg !='1' && valg !='9'){
-                System.out.println("Skriv 1 eller 9 for at vælge.");
-            }
-
-            else if (valg == '9') {
+            } else if (valg != '1' && valg != '9') {
+                System.out.println("Skriv 1 eller 9 for at vælge. \n");
+            } else if (valg == '9') {
                 i = 5;
             }
         }
         while (i < 5);
         System.out.println("Dine superhelte er oprettet!");
     }
-        //} else if (valg != '0' && valg !='9') {
-         //   System.out.println("Skriv 1 eller 9 for at vælge.");
-        }
+
+}
 
 
-
-       // int i = 0;
-
-        //do {
-
-        /*}
-        while (i<5);
-
-        System.out.println(helteHold.getHero1().getName());*/
 
 
 
