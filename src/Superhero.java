@@ -51,4 +51,16 @@ public class Superhero {
     public void getStrength(String s) {
         strength = s;
     }
+
+    @Override
+    public String toString() {
+        return "Superhelt{" +
+                "Superheltenavn='" + name + '\'' +
+                ", Virkelige navn='" + realName + '\'' +
+                ", Superkraft='" + superPower + '\'' +
+                ", Oprindelsesår=" + yearCreated +
+                ", Er menneske?='" + isHuman + '\'' +
+                ", Styrke='" + strength + '\'' +
+                '}';
+    }
 }

@@ -11,4 +11,11 @@ public class Controller {
     public void tilføjSuperhelt(String name, String realName, String superPower, int yearCreated, String isHuman, String strength) {
         db.tilføjSuperhelt(name, realName, superPower, yearCreated, isHuman, strength);
     }
+
+    public ArrayList<Superhero> hentSuperhero() {
+        return db.hentSuperhero();
+    }
+
+
+
 }
