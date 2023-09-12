@@ -2,16 +2,19 @@ import java.util.Scanner;
 
 
 public class Main {
+    private Controller controller;
+    Scanner keyboard = new Scanner(System.in);
+
     public static void main(String[] args) {
+        Main m = new Main();
+        Database db = new Database();
+        m.controller = new Controller(db);
+        m.tilføjHelt();
+    }
 
 
-        Database helteHold = new Database();
-        Scanner keyboard = new Scanner(System.in);
 
-        int i = 0;
-
-
-        do {
+        public void tilføjHelt() {
 
             System.out.println("Velkommen til SUPERHERO UNIVERSET.");
             System.out.println("1. Opret superhelt");
@@ -33,22 +36,24 @@ public class Main {
                 String erMenneske = keyboard.next();
                 System.out.println("Hvad er din superhelts styrkelevel?");
                 String styrke = keyboard.next();
+                tilføjHelt();
 
 
-                helteHold.tilføjSuperhelt(Navn, virkeligeNavn, superKraft, årSkabt, erMenneske, styrke);
-                i++;
+                controller.tilføjSuperhelt(Navn, virkeligeNavn, superKraft, årSkabt, erMenneske, styrke);
+
 
             } else if (valg != '1' && valg != '9') {
                 System.out.println("Skriv 1 eller 9 for at vælge. \n");
+                tilføjHelt();
             } else if (valg == '9') {
-                i = 5;
+                System.out.println("Dine helte er oprettet og dit program afsluttes");
             }
         }
-        while (i < 5);
-        System.out.println("Dine superhelte er oprettet!");
+
     }
 
-}
+
+
 
 
 
