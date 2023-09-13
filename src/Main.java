@@ -73,15 +73,6 @@ public class Main {
         controller.searchSuperhero(søgeNavn);}
         tilføjHelt();
 
-        /*boolean found = true;
-        for (Superhero p : controller.hentSuperhero()) {
-            if (søgeNavn.equalsIgnoreCase(p.getName()) || p.getName().contains(søgeNavn)) {
-                System.out.println("Superhelt fundet: " + p.getName());
-                found = true;
-                break;
-            }
-            if (!found)
-                System.out.println("Kunne ikke finde: " + søgeNavn + " i listen");*/
         }
 
     }
