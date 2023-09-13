@@ -15,7 +15,4 @@ public class Controller {
     public ArrayList<Superhero> hentSuperhero() {
         return db.hentSuperhero();
     }
-
-
-
 }
