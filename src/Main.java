@@ -69,8 +69,11 @@ public class Main {
     public void søgSuperhelt() {
         System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
         String søgeNavn = keyboard.next();
+        for (Superhero p : controller.hentSuperhero()) {
+        controller.searchSuperhero(søgeNavn);}
+        tilføjHelt();
 
-        boolean found = true;
+        /*boolean found = true;
         for (Superhero p : controller.hentSuperhero()) {
             if (søgeNavn.equalsIgnoreCase(p.getName()) || p.getName().contains(søgeNavn)) {
                 System.out.println("Superhelt fundet: " + p.getName());
@@ -78,11 +81,11 @@ public class Main {
                 break;
             }
             if (!found)
-                System.out.println("Kunne ikke finde: " + søgeNavn + " i listen");
+                System.out.println("Kunne ikke finde: " + søgeNavn + " i listen");*/
         }
 
     }
-}
+
 
 
 

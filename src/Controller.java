@@ -12,6 +12,10 @@ public class Controller {
         db.tilføjSuperhelt(name, realName, superPower, yearCreated, isHuman, strength);
     }
 
+    public void searchSuperhero(String søgeNavn){
+        db.searchSuperhero(søgeNavn);
+    }
+
     public ArrayList<Superhero> hentSuperhero() {
         return db.hentSuperhero();
     }
