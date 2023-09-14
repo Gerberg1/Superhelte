@@ -72,7 +72,6 @@ public class Userinterface {
         public void søgSuperhelt () {
             System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
             String søgeNavn = keyboard.next();
-            //for (Superhero p : controller.hentSuperhero()) {
             controller.searchSuperhero(søgeNavn);
             System.out.println("Skriv navnet på den superhelt, du vil se informationer om:");
             String søgeNavnBestemt = keyboard.next();
@@ -97,36 +96,43 @@ public class Userinterface {
                 String nytNavn = keyboard.next();
                 controller.ændreNavn(søgeNavnBestemt, nytNavn);
                 System.out.println("Navnet er ændret!");
+                søgeNavnBestemt = nytNavn;
+                controller.visEnSuperhelt(søgeNavnBestemt);
                 tilføjHelt();
             } else if (superhelteÆndring == '2') {
                 System.out.println("Hvad vil du ændre det virkelige navn til?");
                 String nytVirkeligeNavn = keyboard.next();
                 controller.ændreVirkeligeNavn(søgeNavnBestemt, nytVirkeligeNavn);
                 System.out.println("Det virkelige navn er ændret!");
+                controller.visEnSuperhelt(søgeNavnBestemt);
                 tilføjHelt();
             } else if (superhelteÆndring == '3') {
                 System.out.println("Hvad vil du ændre det virkelige navn til?");
                 String nySuperkraft = keyboard.next();
                 controller.ændreSuperkraft(søgeNavnBestemt, nySuperkraft);
                 System.out.println("Superkraften er ændret!");
+                controller.visEnSuperhelt(søgeNavnBestemt);
                 tilføjHelt();
             } else if (superhelteÆndring == '4') {
                 System.out.println("Hvad vil du ændre det året til?");
                 int nytÅrSkabt = keyboard.nextInt();
                 controller.ændreÅrSkabt(søgeNavnBestemt, nytÅrSkabt);
                 System.out.println("Årstallet er ændret!");
+                controller.visEnSuperhelt(søgeNavnBestemt);
                 tilføjHelt();
             } else if (superhelteÆndring == '5') {
                 System.out.println("Er din superhelt stadig et menneske?");
                 String nyErMenneske = keyboard.next();
                 controller.ændreErMenneske(søgeNavnBestemt, nyErMenneske);
                 System.out.println("Menneskestatus er ændret");
+                controller.visEnSuperhelt(søgeNavnBestemt);
                 tilføjHelt();
             }else if (superhelteÆndring == '6') {
                 System.out.println("Hvad vil du ændre styrkeniveauet til?");
                 String nytStyrkeNiveau = keyboard.next();
                 controller.ændreStyrkeNiveau(søgeNavnBestemt, nytStyrkeNiveau);
                 System.out.println("Styrkeniveauet er ændret");
+                controller.visEnSuperhelt(søgeNavnBestemt);
                 tilføjHelt();
             }
 
