@@ -25,10 +25,59 @@ public class Database {
 
 
 
-    public Superhero findSuperhelt(String navn){
+    public Superhero visEnSuperhelt(String søgeNavnBestemt){
         for (Superhero s: helteListe) {
-            if (s.getName().equals(navn)){
-                return s;
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                System.out.println(hentSuperhero());
+            }
+        }
+        return null;
+    }
+
+    public Superhero ændreNavn(String søgeNavnBestemt, String nytNavn){
+        for (Superhero s: helteListe) {
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                s.setName(nytNavn);
+            }
+        }
+        return null;
+    }
+    public Superhero ændreVirkeligeNavn(String søgeNavnBestemt, String nytVirkeligeNavn){
+        for (Superhero s: helteListe) {
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                s.setName(nytVirkeligeNavn);
+            }
+        }
+        return null;
+    }
+    public Superhero ændreSuperkraft(String søgeNavnBestemt, String nySuperkraft){
+        for (Superhero s: helteListe) {
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                s.setSuperPower(nySuperkraft);
+            }
+        }
+        return null;
+    }
+    public Superhero ændreÅrSkabt(String søgeNavnBestemt, int nytÅrSkabt){
+        for (Superhero s: helteListe) {
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                s.setYearCreated(nytÅrSkabt);
+            }
+        }
+        return null;
+    }
+    public Superhero ændreErMenneske(String søgeNavnBestemt, String nyErMenneske){
+        for (Superhero s: helteListe) {
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                s.setIsHuman(nyErMenneske);
+            }
+        }
+        return null;
+    }
+    public Superhero ændreStyrkeNiveau(String søgeNavnBestemt, String nytStyrkeNiveua){
+        for (Superhero s: helteListe) {
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+                s.setStrength(nytStyrkeNiveua);
             }
         }
         return null;

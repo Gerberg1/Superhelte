@@ -45,10 +45,10 @@ public class Superhero {
     public void setYearCreated(int y) {
         yearCreated = y;
     }
-    public void getIsHuman(String i) {
+    public void setIsHuman(String i) {
         isHuman = i;
     }
-    public void getStrength(String s) {
+    public void setStrength(String s) {
         strength = s;
     }
 
