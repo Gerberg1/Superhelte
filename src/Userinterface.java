@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Userinterface {
     private Controller controller;
     Scanner keyboard = new Scanner(System.in);
