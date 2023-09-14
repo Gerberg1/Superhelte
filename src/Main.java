@@ -69,11 +69,12 @@ public class Main {
     public void søgSuperhelt() {
         System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
         String søgeNavn = keyboard.next();
-        for (Superhero p : controller.hentSuperhero()) {
-        controller.searchSuperhero(søgeNavn);}
+        //for (Superhero p : controller.hentSuperhero()) {
+        controller.searchSuperhero(søgeNavn);
         tilføjHelt();
+    }
 
-        }
+        //}
 
     }
 
