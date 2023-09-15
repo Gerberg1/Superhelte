@@ -27,8 +27,10 @@ public class Database {
 
     public Superhero visEnSuperhelt(String søgeNavnBestemt){
         for (Superhero s: helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)){
+            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
                 System.out.println(hentSuperhero());
+            } else if (!s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
+                System.out.println("Superhelten findes ikke:");
             }
         }
         return null;

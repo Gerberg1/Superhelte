@@ -34,6 +34,11 @@ public class Userinterface {
                 String superKraft = keyboard.next();
                 System.out.println("Hvilket år udkom din superhelt?");
                 keyboard.nextLine();
+                if (!keyboard.hasNextInt()) {
+
+                    String text = keyboard.next();
+                    System.out.println(text + " er ikke et gyldigt tal. Prøv igen.");
+                }
                 int årSkabt = keyboard.nextInt();
                 System.out.println("Er din superhelt et menneske?");
                 String erMenneske = keyboard.next();
@@ -49,7 +54,7 @@ public class Userinterface {
                 visSuperhelt();
 
             } else if (valg != '1' && valg != '9' && valg != '2' && valg != '3' && valg !='4') {
-                System.out.println("Skriv 1, 2, 3 eller 9 for at vælge. \n");
+                System.out.println("Skriv 1, 2, 3, 4 eller 9 for at vælge. \n");
                 tilføjHelt();
             } else if (valg == '3') {
                 søgSuperhelt();
@@ -115,6 +120,11 @@ public class Userinterface {
                 tilføjHelt();
             } else if (superhelteÆndring == '4') {
                 System.out.println("Hvad vil du ændre det året til?");
+                if (!keyboard.hasNextInt()) {
+
+                    String text = keyboard.next();
+                    System.out.println(text + " er ikke et gyldigt tal. Prøv igen.");
+                }
                 int nytÅrSkabt = keyboard.nextInt();
                 controller.ændreÅrSkabt(søgeNavnBestemt, nytÅrSkabt);
                 System.out.println("Årstallet er ændret!");
