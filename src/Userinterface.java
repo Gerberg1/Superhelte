@@ -27,15 +27,14 @@ public class Userinterface {
 
                 System.out.println("Opret en superhelt");
                 System.out.println("Hvad er navnet på din superhelt?");
-                String Navn = keyboard.next();
-                System.out.println("Hvad er superheltens virkelige navn?");
-                String virkeligeNavn = keyboard.next();
-                System.out.println("Hvad er superheltens superkraft?");
-                String superKraft = keyboard.next();
-                System.out.println("Hvilket år udkom din superhelt?");
                 keyboard.nextLine();
+                String Navn = keyboard.nextLine();
+                System.out.println("Hvad er superheltens virkelige navn?");
+                String virkeligeNavn = keyboard.nextLine();
+                System.out.println("Hvad er superheltens superkraft?");
+                String superKraft = keyboard.nextLine();
+                System.out.println("Hvilket år udkom din superhelt?");
                 if (!keyboard.hasNextInt()) {
-
                     String text = keyboard.next();
                     System.out.println(text + " er ikke et gyldigt tal. Prøv igen.");
                 }
@@ -43,7 +42,7 @@ public class Userinterface {
                 System.out.println("Er din superhelt et menneske?");
                 String erMenneske = keyboard.next();
                 System.out.println("Hvad er din superhelts styrkelevel?");
-                String styrke = keyboard.next();
+                String styrke = keyboard.nextLine();
                 System.out.println("Din superhelt er oprettet!");
 
                 controller.tilføjSuperhelt(Navn, virkeligeNavn, superKraft, årSkabt, erMenneske, styrke);
@@ -121,7 +120,6 @@ public class Userinterface {
             } else if (superhelteÆndring == '4') {
                 System.out.println("Hvad vil du ændre det året til?");
                 if (!keyboard.hasNextInt()) {
-
                     String text = keyboard.next();
                     System.out.println(text + " er ikke et gyldigt tal. Prøv igen.");
                 }
