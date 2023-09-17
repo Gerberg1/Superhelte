@@ -20,32 +20,8 @@ public class Superhero {
         return name;
     }
 
-    public String getRealName() {
-        return realName;
-    }
-
-    public String getSuperPower() {
-        return superPower;
-    }
-
-    public int getYearCreated() {
-        return yearCreated;
-    }
-
-    public String getIsHuman() {
-        return isHuman;
-    }
-
-    public String getStrength() {
-        return strength;
-    }
-
     public void setName(String n) {
         name = n;
-    }
-
-    public void setRealName(String r) {
-        realName = r;
     }
 
     public void setSuperPower(String s) {
@@ -64,7 +40,6 @@ public class Superhero {
         strength = s;
     }
 
-    @Override
     public String toString() {
         return "{" +
                 "Navn='" + name + '\'' +
