@@ -14,7 +14,7 @@ public class Database {
     }
 
 
-    public void searchSuperhero(String søgeNavn) {
+    public Superhero searchSuperhero(String søgeNavn) {
         for (Superhero p : hentSuperhero()) {
             if (søgeNavn.equalsIgnoreCase(p.getName()) || p.getName().contains(søgeNavn)) {
                 System.out.println("Matchende superhelte fundet: " + p.getName());
@@ -22,6 +22,7 @@ public class Database {
                 System.out.println("Kunne ikke finde: " + søgeNavn);
             }
         }
+        return null;
     }
 
 
@@ -48,7 +49,7 @@ public class Database {
     public Superhero ændreVirkeligeNavn(String søgeNavnBestemt, String nytVirkeligeNavn) {
         for (Superhero s : helteListe) {
             if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setName(nytVirkeligeNavn);
+                s.setRealName(nytVirkeligeNavn);
             }
         }
         return null;
@@ -81,10 +82,10 @@ public class Database {
         return null;
     }
 
-    public Superhero ændreStyrkeNiveau(String søgeNavnBestemt, String nytStyrkeNiveua) {
+    public Superhero ændreStyrkeNiveau(String søgeNavnBestemt, String nytStyrkeNiveau) {
         for (Superhero s : helteListe) {
             if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setStrength(nytStyrkeNiveua);
+                s.setStrength(nytStyrkeNiveau);
             }
         }
         return null;
