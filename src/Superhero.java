@@ -65,13 +65,11 @@ public class Superhero {
     }
 
     public String toString() {
-        return "{" +
-                "Navn='" + name + '\'' +
+        return "Navn='" + name + '\'' +
                 ", Virkelige navn='" + realName + '\'' +
                 ", Superkraft='" + superPower + '\'' +
                 ", Oprindelsesår=" + yearCreated +
                 ", Er menneske?='" + isHuman + '\'' +
-                ", Styrke='" + strength + '\'' +
-                '}';
+                ", Styrke='" + strength + '\'';
     }
 }

@@ -2,92 +2,86 @@ import java.util.ArrayList;
 
 public class Database {
 
-    private ArrayList<Superhero> helteListe = new ArrayList<Superhero>();
+    private ArrayList<Superhero> heroList = new ArrayList<Superhero>();
 
 
-    public void tilføjSuperhelt(String name, String realName, String superPower, int yearCreated, String isHuman, String strength) {
-        helteListe.add(new Superhero(name, realName, superPower, yearCreated, isHuman, strength));
+    public void addSuperhero(String name, String realName, String superPower, int yearCreated, String isHuman, String strength) {
+        heroList.add(new Superhero(name, realName, superPower, yearCreated, isHuman, strength));
     }
 
-    public ArrayList<Superhero> hentSuperhero() {
-        return helteListe;
+    public ArrayList<Superhero> getSuperhero() {
+        return heroList;
     }
 
 
-    public Superhero searchSuperhero(String søgeNavn) {
-        for (Superhero p : hentSuperhero()) {
-            if (søgeNavn.equalsIgnoreCase(p.getName()) || p.getName().contains(søgeNavn)) {
-                System.out.println("Matchende superhelte fundet: " + p.getName());
-            } else {
-                System.out.println("Kunne ikke finde: " + søgeNavn);
+    public String searchSuperhero(String searchName) {
+        StringBuilder stringbuilder = new StringBuilder();
+        for (Superhero p : heroList) {
+            if (searchName.equalsIgnoreCase(p.getName()) || p.getName().contains(searchName)) {
+                stringbuilder.append(p.getName()).append(". ");
             }
         }
-        return null;
+        return stringbuilder.toString();
     }
 
 
-    public String visEnSuperhelt(String søgeNavnBestemt) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                System.out.println(s);
-            } else if (!s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                System.out.println("Superhelten findes ikke:");
+    public String showASuperhero(String specificSearchName) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                return s.toString();
             }
-        }
-        return null;
+
+            }
+
+       return null;
     }
 
-    public Superhero ændreNavn(String søgeNavnBestemt, String nytNavn) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setName(nytNavn);
+    public void changeName(String specificSearchName, String newName) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                s.setName(newName);
             }
         }
-        return null;
     }
 
-    public Superhero ændreVirkeligeNavn(String søgeNavnBestemt, String nytVirkeligeNavn) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setRealName(nytVirkeligeNavn);
+    public void changeRealName(String specificSearchName, String newRealName) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                s.setRealName(newRealName);
             }
         }
-        return null;
+
     }
 
-    public Superhero ændreSuperkraft(String søgeNavnBestemt, String nySuperkraft) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setSuperPower(nySuperkraft);
+    public void changeSuperPower(String specificSearchName, String newSuperPower) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                s.setSuperPower(newSuperPower);
             }
         }
-        return null;
     }
 
-    public Superhero ændreÅrSkabt(String søgeNavnBestemt, int nytÅrSkabt) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setYearCreated(nytÅrSkabt);
+    public void changeYearCreated(String specificSearchName, int newYearCreated) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                s.setYearCreated(newYearCreated);
             }
         }
-        return null;
     }
 
-    public Superhero ændreErMenneske(String søgeNavnBestemt, String nyErMenneske) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setIsHuman(nyErMenneske);
+    public void changeIsHuman(String specificSearchName, String newIsHuman) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                s.setIsHuman(newIsHuman);
             }
         }
-        return null;
     }
 
-    public Superhero ændreStyrkeNiveau(String søgeNavnBestemt, String nytStyrkeNiveau) {
-        for (Superhero s : helteListe) {
-            if (s.getName().equalsIgnoreCase(søgeNavnBestemt)) {
-                s.setStrength(nytStyrkeNiveau);
+    public void changeStrength(String specificSearchName, String newStrength) {
+        for (Superhero s : heroList) {
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                s.setStrength(newStrength);
             }
         }
-        return null;
     }
 }

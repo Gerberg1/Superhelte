@@ -9,43 +9,43 @@ public class Controller {
         this.db = db;
     }
 
-    public void tilføjSuperhelt(String name, String realName, String superPower, int yearCreated, String isHuman, String strength) {
-        db.tilføjSuperhelt(name, realName, superPower, yearCreated, isHuman, strength);
+    public void addSuperhero(String name, String realName, String superPower, int yearCreated, String isHuman, String strength) {
+        db.addSuperhero(name, realName, superPower, yearCreated, isHuman, strength);
     }
 
-    public void searchSuperhero(String søgeNavn) {
-        db.searchSuperhero(søgeNavn);
+    public String searchSuperhero(String searchName) {
+        return db.searchSuperhero(searchName);
     }
 
-    public void ændreNavn(String søgeNavnBestemt, String nytNavn) {
-        db.ændreNavn(søgeNavnBestemt, nytNavn);
+    public void changeName(String specificSearchName, String newName) {
+        db.changeName(specificSearchName, newName);
     }
 
-    public void ændreVirkeligeNavn(String søgeNavnBestemt, String nytVirkeligeNavn) {
-        db.ændreVirkeligeNavn(søgeNavnBestemt, nytVirkeligeNavn);
+    public void changeRealName(String specificSearchName, String newRealName) {
+        db.changeRealName(specificSearchName, newRealName);
     }
 
-    public void ændreSuperkraft(String søgeNavnBestemt, String nySuperkraft) {
-        db.ændreSuperkraft(søgeNavnBestemt, nySuperkraft);
+    public void changeSuperPower(String specificSearchName, String newSuperPower) {
+        db.changeSuperPower(specificSearchName, newSuperPower);
     }
 
-    public void ændreÅrSkabt(String søgeNavnBestemt, int nytÅrSkabt) {
-        db.ændreÅrSkabt(søgeNavnBestemt, nytÅrSkabt);
+    public void changeYearCreated(String specificSearchName, int newYearCreated) {
+        db.changeYearCreated(specificSearchName, newYearCreated);
     }
 
-    public void ændreErMenneske(String søgeNavnBestemt, String nyErMenneske) {
-        db.ændreErMenneske(søgeNavnBestemt, nyErMenneske);
+    public void changeIsHuman(String specificSearchName, String newIsHuman) {
+        db.changeIsHuman(specificSearchName, newIsHuman);
     }
 
-    public void ændreStyrkeNiveau(String søgeNavnBestemt, String nytStyrkeNiveau) {
-        db.ændreStyrkeNiveau(søgeNavnBestemt, nytStyrkeNiveau);
+    public void changeStrength(String specificSearchName, String newStrength) {
+        db.changeStrength(specificSearchName, newStrength);
     }
 
-    public ArrayList<Superhero> hentSuperhero() {
-        return db.hentSuperhero();
+    public ArrayList<Superhero> getSuperhero() {
+        return db.getSuperhero();
     }
 
-    public void visEnSuperhelt(String søgeNavnBestemt) {
-        db.visEnSuperhelt(søgeNavnBestemt);
+    public String showASuperhero(String specificSearchName) {
+        return db.showASuperhero(specificSearchName);
     }
 }
