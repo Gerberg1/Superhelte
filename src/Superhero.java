@@ -70,6 +70,6 @@ public class Superhero {
                 "Superkraft: " + superPower + '\n' +
                 "Oprindelsesår: " + yearCreated + '\n'+
                 "Er superhelten et menneske? " + isHuman + '\n' +
-                "Styrke: " + strength;
+                "Styrke: " + strength  + '\n';
     }
 }
