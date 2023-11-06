@@ -18,6 +18,7 @@ public class Database {
 
     public ArrayList<Superhero> getSuperhero() {
         Collections.sort(heroList, new YearCreatedComparator());
+
         return heroList;
     }
 
