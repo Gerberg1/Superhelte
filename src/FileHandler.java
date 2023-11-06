@@ -29,7 +29,7 @@ public class FileHandler {
     }
 
 
-    public void tilføjGemteHelte (ArrayList<Superhero> a) {
+    public void addSavedSuperheroes(ArrayList<Superhero> a) {
 
         Scanner sc = null;
         try {

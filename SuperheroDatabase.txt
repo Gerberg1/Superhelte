@@ -1,1 +1,4 @@
 Benny,Benny@bob,bobobo,1234,ja,8
+Kæmpe@knud,Knud,asd,2345,nej,5
+Sussie@Sejr,Sussie,ghjh,765,ja,2
+

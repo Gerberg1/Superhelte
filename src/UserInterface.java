@@ -15,7 +15,7 @@ public class UserInterface {
     }
 
     public void addSavedHeroes() {
-        controller.tilføjGemteHelte();
+        controller.addSavedSuperheroes();
         createSuperhero();
     }
 
@@ -31,9 +31,9 @@ public class UserInterface {
         System.out.println("4. Ændre din superhelte");
         System.out.println("5. Gem dine superhelte");
         System.out.println("9. Afslut");
-        char valg = keyboard.next().charAt(0);
+        char userchoice = keyboard.next().charAt(0);
 
-        if (valg == '1') {
+        if (userchoice == '1') {
 
             System.out.println("Opret en superhelt");
             System.out.println("Hvad er navnet på din superhelt?");
@@ -61,22 +61,45 @@ public class UserInterface {
             createSuperhero();
 
 
-        } else if (valg == '2') {
+        } else if (userchoice == '2') {
+            System.out.println("Hvilket kriterie vil du sortere dine superhelte efter?  ");
+            System.out.println("1. Alfabetisk efter superheltenavn");
+            System.out.println("2. Årstal superhelten er skabt");
+            System.out.println("3. Superheltens styrke");
+
+            char sortBy = this.keyboard.next().charAt(0);
+
+            switch (sortBy) {
+                case '1':
+                    controller.getSuperheroByName();
+                    break;
+                case '2':
+                    controller.getSuperheroByYear();
+                    break;
+                case '3':
+                    controller.getSuperheroByStrength();
+                    break;
+            }
+
             showSuperhero();
 
-        } else if (valg != '1' && valg != '9' && valg != '2' && valg != '3' && valg != '4') {
+
+
+
+
+        } else if (userchoice != '1' && userchoice != '9' && userchoice != '2' && userchoice != '3' && userchoice != '4') {
             System.out.println("Skriv 1, 2, 3, 4 eller 9 for at vælge. \n");
             createSuperhero();
-        } else if (valg == '3') {
+        } else if (userchoice == '3') {
             searchSuperhero();
-        } else if (valg == '4') {
+        } else if (userchoice == '4') {
             editSuperhero();
-        } else if (valg == '5') {
+        } else if (userchoice == '5') {
             controller.saveSuperheroes();
             System.out.println("Dine superhelte er gemt!");
             createSuperhero();
 
-        } else if (valg == '9') {
+        } else if (userchoice == '9') {
             if (changedSuperhero)
                 controller.saveSuperheroes();
         }

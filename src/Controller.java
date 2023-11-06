@@ -41,6 +41,18 @@ public class Controller {
         db.changeStrength(specificSearchName, newStrength);
     }
 
+    public ArrayList<Superhero> getSuperheroByName() {
+        return db.getSuperheroByName();
+    }
+
+    public ArrayList<Superhero> getSuperheroByYear() {
+        return db.getSuperheroByYear();
+    }
+
+    public ArrayList<Superhero> getSuperheroByStrength() {
+        return db.getSuperheroByStrength();
+    }
+
     public ArrayList<Superhero> getSuperhero() {
         return db.getSuperhero();
     }
@@ -53,7 +65,7 @@ public class Controller {
         db.saveSuperheroes(db.getSuperhero());
     }
 
-    public void tilføjGemteHelte(){
-        db.tilføjGemteHelte(db.getSuperhero());
+    public void addSavedSuperheroes(){
+        db.addSavedSuperheroes(db.getSuperhero());
     }
 }

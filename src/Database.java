@@ -17,7 +17,23 @@ public class Database {
     }
 
     public ArrayList<Superhero> getSuperhero() {
+        return heroList;
+    }
+
+    public ArrayList<Superhero> getSuperheroByYear() {
         Collections.sort(heroList, new YearCreatedComparator());
+
+        return heroList;
+    }
+
+    public ArrayList<Superhero> getSuperheroByName() {
+        Collections.sort(heroList, new NameComparator());
+
+        return heroList;
+    }
+
+    public ArrayList<Superhero> getSuperheroByStrength() {
+        Collections.sort(heroList, new StrengthComparator());
 
         return heroList;
     }
@@ -26,8 +42,8 @@ public class Database {
         fh.saveSuperheroes(helteListe);
     }
 
-    public void tilføjGemteHelte(ArrayList helteListe) {
-        fh.tilføjGemteHelte(helteListe);
+    public void addSavedSuperheroes(ArrayList helteListe) {
+        fh.addSavedSuperheroes(helteListe);
     }
 
 
