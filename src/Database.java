@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Database {
 
@@ -16,6 +17,7 @@ public class Database {
     }
 
     public ArrayList<Superhero> getSuperhero() {
+        Collections.sort(heroList, new NameComparator());
         return heroList;
     }
 
