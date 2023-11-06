@@ -66,22 +66,22 @@ public class UserInterface {
             System.out.println("1. Alfabetisk efter superheltenavn");
             System.out.println("2. Årstal superhelten er skabt");
             System.out.println("3. Superheltens styrke");
-
             char sortBy = this.keyboard.next().charAt(0);
-
-            switch (sortBy) {
-                case '1':
-                    controller.getSuperheroByName();
-                    break;
-                case '2':
-                    controller.getSuperheroByYear();
-                    break;
-                case '3':
-                    controller.getSuperheroByStrength();
-                    break;
+            System.out.println("Hvilket kriterie vil du have som anden prioritet?");
+            char sortBySecondary = this.keyboard.next().charAt(0);
+            if (sortBy == sortBySecondary){
+                System.out.println("Dit andet kriterie må ikke være det samme som dit første kriterie." +
+                        "Vælg en anden prioritet igen.");
+                sortBySecondary = this.keyboard.next().charAt(0);
             }
 
-            showSuperhero();
+
+
+            controller.getSuperheroByChoice(sortBy, sortBySecondary);
+            System.out.println(controller.getSuperhero());
+            createSuperhero();
+
+
 
 
 

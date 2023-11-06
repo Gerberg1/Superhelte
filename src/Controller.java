@@ -57,6 +57,11 @@ public class Controller {
         return db.getSuperhero();
     }
 
+    //public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary) {
+    public String getSuperheroByChoice(char sortBy, char sortBySecondary) {
+        return db.getSuperheroByChoice(sortBy, sortBySecondary);
+    }
+
     public String showASuperhero(String specificSearchName) {
         return db.showASuperhero(specificSearchName);
     }

@@ -20,6 +20,48 @@ public class Database {
         return heroList;
     }
 
+    //public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary){
+    public String getSuperheroByChoice(char sortBy, char sortBySecondary){
+
+        switch (sortBy) {
+            case '1':
+                if (sortBySecondary == '2') {
+                    Collections.sort(heroList, new NameComparator().thenComparing(new YearCreatedComparator()));
+                    break;
+                }
+                if (sortBySecondary == '3') {
+                    Collections.sort(heroList, new NameComparator().thenComparing(new StrengthComparator()));
+                    break;
+                }
+            case '2':
+                if (sortBySecondary == '1') {
+                    Collections.sort(heroList, new YearCreatedComparator().thenComparing(new NameComparator()));
+                    break;
+                }
+                if (sortBySecondary == '3') {
+                    Collections.sort(heroList, new YearCreatedComparator().thenComparing(new StrengthComparator()));
+                    break;
+                }
+            case '3':
+                if (sortBySecondary == '1') {
+                    Collections.sort(heroList, new StrengthComparator().thenComparing(new NameComparator()));
+                    break;
+                }
+                if (sortBySecondary == '2') {
+                    Collections.sort(heroList, new StrengthComparator().thenComparing(new YearCreatedComparator()));
+                    break;
+                }
+        }
+
+        StringBuilder stringbuilder = new StringBuilder();
+        for (Superhero p : heroList) {
+                stringbuilder.append(p.getName()).append(". ");
+
+        }
+        return stringbuilder.toString();
+    }
+    
+
     public ArrayList<Superhero> getSuperheroByYear() {
         Collections.sort(heroList, new YearCreatedComparator());
 
