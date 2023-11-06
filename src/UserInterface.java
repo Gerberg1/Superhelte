@@ -11,11 +11,10 @@ public class UserInterface {
         Database db = new Database();
         m.controller = new Controller(db);
         m.addSavedHeroes();
-        //m.createSuperhero();
 
     }
 
-    public void addSavedHeroes(){
+    public void addSavedHeroes() {
         controller.tilføjGemteHelte();
         createSuperhero();
     }
@@ -23,6 +22,7 @@ public class UserInterface {
     public void createSuperhero() {
 
         boolean changedSuperhero = false;
+
 
         System.out.println("Velkommen til SUPERHERO UNIVERSET.");
         System.out.println("1. Opret superhelt");
@@ -61,7 +61,6 @@ public class UserInterface {
             createSuperhero();
 
 
-
         } else if (valg == '2') {
             showSuperhero();
 
@@ -72,19 +71,18 @@ public class UserInterface {
             searchSuperhero();
         } else if (valg == '4') {
             editSuperhero();
-        }else if (valg == '5') {
-                controller.saveSuperheroes();
-                System.out.println("Dine superhelte er gemt!");
-                createSuperhero();
+        } else if (valg == '5') {
+            controller.saveSuperheroes();
+            System.out.println("Dine superhelte er gemt!");
+            createSuperhero();
 
         } else if (valg == '9') {
-            if (changedSuperhero) {
+            if (changedSuperhero)
                 controller.saveSuperheroes();
-            }
-
-            System.out.println("Dine helte er oprettet og dit program afsluttes");
-
         }
+
+        System.out.println("Dine helte er oprettet og dit program afsluttes");
+
     }
 
     public void showSuperhero() {
@@ -99,14 +97,14 @@ public class UserInterface {
         System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
         String searchName = keyboard.next();
         System.out.println("Matchende superhelte fundet:" + controller.searchSuperhero(searchName));
-        if (controller.searchSuperhero(searchName)==null){
+        if (controller.searchSuperhero(searchName) == null) {
             System.out.println("Kunne ikke finde: " + searchName);
             createSuperhero();
         }
         System.out.println("Skriv navnet på den superhelt, du vil se informationer om:");
         keyboard.nextLine();
         String specificSearchName = keyboard.nextLine();
-        if (controller.showASuperhero(specificSearchName)==null) {
+        if (controller.showASuperhero(specificSearchName) == null) {
             System.out.println("Kunne ikke finde: " + specificSearchName);
             createSuperhero();
         }
@@ -118,16 +116,16 @@ public class UserInterface {
         System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
         String searchName = keyboard.next();
 
-        if (controller.searchSuperhero(searchName)==null){
+        if (controller.searchSuperhero(searchName) == null) {
             System.out.println("Superhelten kunne ikke findes.");
             createSuperhero();
         }
-        System.out.println("Matchende superhelte fundet: "+ controller.searchSuperhero(searchName));
+        System.out.println("Matchende superhelte fundet: " + controller.searchSuperhero(searchName));
         System.out.println("Skriv navnet på den superhelt, du vil ændre på:");
         keyboard.nextLine();
         String specificSearchName = keyboard.nextLine();
         System.out.println(controller.showASuperhero(specificSearchName));
-        if (controller.showASuperhero(specificSearchName)==null){
+        if (controller.showASuperhero(specificSearchName) == null) {
             System.out.println("Superhelten kunne ikke findes.");
             createSuperhero();
         }
