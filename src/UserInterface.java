@@ -49,6 +49,9 @@ public class UserInterface {
             case '5':
                 controller.saveSuperheroes();
                 System.out.println("Dine superhelte er gemt!");
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
+                keyboard.nextLine();
                 createSuperhero();
             case '6':
                 deleteSuperhero();
@@ -83,9 +86,11 @@ public class UserInterface {
         System.out.println("Hvad er din superhelts styrkelevel?");
         String strength = keyboard.nextLine();
         System.out.println("Din superhelt er oprettet!");
-
         controller.addSuperhero(Name, realName, superPower, yearCreated, isHuman, strength);
         changedSuperhero = true;
+
+        System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+        keyboard.nextLine();
         createSuperhero();
 
     }
@@ -107,9 +112,12 @@ public class UserInterface {
                     "Vælg en anden prioritet igen.");
             sortBySecondary = this.keyboard.next().charAt(0);
         }
-
         controller.getSuperheroByChoice(sortBy, sortBySecondary);
         System.out.println(controller.showAllSuperheroes());
+
+        System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+        keyboard.nextLine();
+        keyboard.nextLine();
         createSuperhero();
 
     }
@@ -122,10 +130,6 @@ public class UserInterface {
         System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
         String searchName = keyboard.next();
         System.out.println("Matchende superhelte fundet:" + controller.searchSuperhero(searchName));
-        if (controller.searchSuperhero(searchName) == null) {
-            System.out.println("Kunne ikke finde: " + searchName);
-            createSuperhero();
-        }
         System.out.println("Skriv navnet på den superhelt, du vil se informationer om:");
         keyboard.nextLine();
         String specificSearchName = keyboard.nextLine();
@@ -134,6 +138,8 @@ public class UserInterface {
             createSuperhero();
         }
         System.out.println(controller.showASuperhero(specificSearchName));
+        System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+        keyboard.nextLine();
         createSuperhero();
     }
 
@@ -176,6 +182,9 @@ public class UserInterface {
                 System.out.println("Navnet er ændret!");
                 specificSearchName = newName;
                 System.out.println(controller.showASuperhero(specificSearchName));
+
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
                 createSuperhero();
             case '2':
                 System.out.println("Hvad vil du ændre det virkelige navn til?");
@@ -184,6 +193,9 @@ public class UserInterface {
                 controller.changeRealName(specificSearchName, newRealName);
                 System.out.println("Det virkelige navn er ændret!");
                 System.out.println(controller.showASuperhero(specificSearchName));
+
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
                 createSuperhero();
             case '3':
                 System.out.println("Hvad vil du ændre superkraften til?");
@@ -192,6 +204,9 @@ public class UserInterface {
                 controller.changeSuperPower(specificSearchName, newSuperPower);
                 System.out.println("Superkraften er ændret!");
                 System.out.println(controller.showASuperhero(specificSearchName));
+
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
                 createSuperhero();
             case '4':
                 System.out.println("Hvad vil du ændre det året til?");
@@ -203,6 +218,9 @@ public class UserInterface {
                 controller.changeYearCreated(specificSearchName, newYearCreated);
                 System.out.println("Årstallet er ændret!");
                 System.out.println(controller.showASuperhero(specificSearchName));
+
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
                 createSuperhero();
             case '5':
                 System.out.println("Er din superhelt et menneske?");
@@ -210,6 +228,9 @@ public class UserInterface {
                 controller.changeIsHuman(specificSearchName, newIsHuman);
                 System.out.println("Menneskestatus er ændret");
                 System.out.println(controller.showASuperhero(specificSearchName));
+
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
                 createSuperhero();
             case '6':
                 System.out.println("Hvad vil du ændre styrkeniveauet til?");
@@ -218,6 +239,9 @@ public class UserInterface {
                 controller.changeStrength(specificSearchName, newStrength);
                 System.out.println("Styrkeniveauet er ændret");
                 System.out.println(controller.showASuperhero(specificSearchName));
+
+                System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+                keyboard.nextLine();
                 createSuperhero();
         }
 
@@ -243,14 +267,15 @@ public class UserInterface {
             System.out.println("Kunne ikke finde: " + specificSearchName);
             createSuperhero();
         }
-
         controller.deleteSuperhero(specificSearchName);
         System.out.println(specificSearchName + " er blevet slettet!");
         changedSuperhero = true;
+
+        System.out.println("Tryk på en vilkårlig tast for at gå tilbage til menuen.");
+        keyboard.nextLine();
         createSuperhero();
 
     }
-
 }
 
 

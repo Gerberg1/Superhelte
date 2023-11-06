@@ -83,6 +83,7 @@ public class Database {
         return stringBuilder.toString();
         }
 
+
     public void deleteSuperhero(String specificSearchName) {
         for (int i = 0; i < heroList.size(); i++) {
             if (heroList.get(i).equals(showASuperhero(specificSearchName))) {

@@ -1,3 +1,5 @@
-Batman,Bruce@Wayne,Gadgets,1940,Ja,200
-Iron@Man,Tony@Stark,Powersuit,1980,Ja,150
 Superman,Clark@Kent,Stærk,1939,Nej,1000
+Batman,Bruce@Wayne,gadgets@og@klog,1940,Ja,200
+Spiderman,Peter@Parker,Spiderstuff,1970,ja,500
+Iron@Man,Tony@Stark,Powersuit,1980,Ja,150
+The@Punisher,Frank@Castle,Guns,1980,Ja,90
