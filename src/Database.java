@@ -22,8 +22,8 @@ public class Database {
 
     public String showAllSuperheroes(){
         StringBuilder stringBuilder = new StringBuilder();
-        for (Superhero p : heroList) {
-           stringBuilder.append(showASuperhero(p.getName())+"\n") ;
+        for (Superhero s : heroList) {
+           stringBuilder.append(showASuperhero(s.getName())+"\n") ;
         }
        return stringBuilder.toString();
     }
@@ -65,20 +65,20 @@ public class Database {
 
 
 
-    public void saveSuperheroes(ArrayList helteListe) {
-        fh.saveSuperheroes(helteListe);
+    public void saveSuperheroes(ArrayList heroList) {
+        fh.saveSuperheroes(heroList);
     }
 
-    public void addSavedSuperheroes(ArrayList helteListe) {
-        fh.addSavedSuperheroes(helteListe);
+    public void addSavedSuperheroes(ArrayList heroList) {
+        fh.addSavedSuperheroes(heroList);
     }
 
 
     public String searchSuperhero(String searchName) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (Superhero p : heroList) {
-            if (p.getName().toLowerCase().contains(searchName.toLowerCase()))
-            stringBuilder.append(p.getName() + ". ");
+        for (Superhero s : heroList) {
+            if (s.getName().toLowerCase().contains(searchName.toLowerCase()))
+            stringBuilder.append(s.getName() + ". ");
             }
         return stringBuilder.toString();
         }
