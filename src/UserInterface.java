@@ -22,6 +22,8 @@ public class UserInterface {
 
     public void createSuperhero() {
 
+        boolean changedSuperhero = false;
+
         System.out.println("Velkommen til SUPERHERO UNIVERSET.");
         System.out.println("1. Opret superhelt");
         System.out.println("2. Se dine superhelte");
@@ -55,7 +57,9 @@ public class UserInterface {
             System.out.println("Din superhelt er oprettet!");
 
             controller.addSuperhero(Name, realName, superPower, yearCreated, isHuman, strength);
+            changedSuperhero = true;
             createSuperhero();
+
 
 
         } else if (valg == '2') {
@@ -74,7 +78,10 @@ public class UserInterface {
                 createSuperhero();
 
         } else if (valg == '9') {
-            controller.saveSuperheroes();
+            if (changedSuperhero) {
+                controller.saveSuperheroes();
+            }
+
             System.out.println("Dine helte er oprettet og dit program afsluttes");
 
         }
