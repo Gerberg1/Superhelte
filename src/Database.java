@@ -20,8 +20,7 @@ public class Database {
         return heroList;
     }
 
-    //public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary){
-    public String getSuperheroByChoice(char sortBy, char sortBySecondary){
+    public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary){
 
         switch (sortBy) {
             case '1':
@@ -53,32 +52,10 @@ public class Database {
                 }
         }
 
-        StringBuilder stringbuilder = new StringBuilder();
-        for (Superhero p : heroList) {
-                stringbuilder.append(p.getName()).append(". ");
-
-        }
-        return stringbuilder.toString();
-    }
-    
-
-    public ArrayList<Superhero> getSuperheroByYear() {
-        Collections.sort(heroList, new YearCreatedComparator());
-
         return heroList;
     }
 
-    public ArrayList<Superhero> getSuperheroByName() {
-        Collections.sort(heroList, new NameComparator());
 
-        return heroList;
-    }
-
-    public ArrayList<Superhero> getSuperheroByStrength() {
-        Collections.sort(heroList, new StrengthComparator());
-
-        return heroList;
-    }
 
     public void saveSuperheroes(ArrayList helteListe) {
         fh.saveSuperheroes(helteListe);

@@ -41,24 +41,12 @@ public class Controller {
         db.changeStrength(specificSearchName, newStrength);
     }
 
-    public ArrayList<Superhero> getSuperheroByName() {
-        return db.getSuperheroByName();
-    }
-
-    public ArrayList<Superhero> getSuperheroByYear() {
-        return db.getSuperheroByYear();
-    }
-
-    public ArrayList<Superhero> getSuperheroByStrength() {
-        return db.getSuperheroByStrength();
-    }
 
     public ArrayList<Superhero> getSuperhero() {
         return db.getSuperhero();
     }
 
-    //public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary) {
-    public String getSuperheroByChoice(char sortBy, char sortBySecondary) {
+    public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary) {
         return db.getSuperheroByChoice(sortBy, sortBySecondary);
     }
 
