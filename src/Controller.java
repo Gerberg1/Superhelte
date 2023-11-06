@@ -48,4 +48,12 @@ public class Controller {
     public String showASuperhero(String specificSearchName) {
         return db.showASuperhero(specificSearchName);
     }
+
+    public void saveSuperheroes(){
+        db.saveSuperheroes(db.getSuperhero());
+    }
+
+    public void tilføjGemteHelte(){
+        db.tilføjGemteHelte(db.getSuperhero());
+    }
 }

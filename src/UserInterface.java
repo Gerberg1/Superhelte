@@ -10,8 +10,14 @@ public class UserInterface {
         UserInterface m = new UserInterface();
         Database db = new Database();
         m.controller = new Controller(db);
-        m.createSuperhero();
+        m.addSavedHeroes();
+        //m.createSuperhero();
 
+    }
+
+    public void addSavedHeroes(){
+        controller.tilføjGemteHelte();
+        createSuperhero();
     }
 
     public void createSuperhero() {
@@ -21,6 +27,7 @@ public class UserInterface {
         System.out.println("2. Se dine superhelte");
         System.out.println("3. Søg efter en superhelt");
         System.out.println("4. Ændre din superhelte");
+        System.out.println("5. Gem dine superhelte");
         System.out.println("9. Afslut");
         char valg = keyboard.next().charAt(0);
 
@@ -61,9 +68,15 @@ public class UserInterface {
             searchSuperhero();
         } else if (valg == '4') {
             editSuperhero();
+        }else if (valg == '5') {
+                controller.saveSuperheroes();
+                System.out.println("Dine superhelte er gemt!");
+                createSuperhero();
 
         } else if (valg == '9') {
+            controller.saveSuperheroes();
             System.out.println("Dine helte er oprettet og dit program afsluttes");
+
         }
     }
 

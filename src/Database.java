@@ -2,6 +2,12 @@ import java.util.ArrayList;
 
 public class Database {
 
+    FileHandler fh;
+
+    public Database() {
+        fh = new FileHandler();
+    }
+
     private ArrayList<Superhero> heroList = new ArrayList<Superhero>();
 
 
@@ -11,6 +17,14 @@ public class Database {
 
     public ArrayList<Superhero> getSuperhero() {
         return heroList;
+    }
+
+    public void saveSuperheroes(ArrayList helteListe) {
+        fh.saveSuperheroes(helteListe);
+    }
+
+    public void tilføjGemteHelte(ArrayList helteListe) {
+        fh.tilføjGemteHelte(helteListe);
     }
 
 
