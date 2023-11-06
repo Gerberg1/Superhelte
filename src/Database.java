@@ -67,14 +67,15 @@ public class Database {
 
 
     public String searchSuperhero(String searchName) {
-        StringBuilder stringbuilder = new StringBuilder();
         for (Superhero p : heroList) {
-            if (searchName.equalsIgnoreCase(p.getName()) || p.getName().contains(searchName)) {
-                stringbuilder.append(p.getName()).append(". ");
+
+            return p.getName();
             }
+        return null;
         }
-        return stringbuilder.toString();
-    }
+
+
+
 
 
     public String showASuperhero(String specificSearchName) {

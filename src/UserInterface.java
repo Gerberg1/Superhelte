@@ -33,78 +33,77 @@ public class UserInterface {
         System.out.println("9. Afslut");
         char userchoice = keyboard.next().charAt(0);
 
-        if (userchoice == '1') {
+        switch (userchoice) {
 
-            System.out.println("Opret en superhelt");
-            System.out.println("Hvad er navnet på din superhelt?");
-            keyboard.nextLine();
-            String Name = keyboard.nextLine();
-            System.out.println("Hvad er superheltens virkelige navn?");
-            String realName = keyboard.nextLine();
-            System.out.println("Hvad er superheltens superkraft?");
-            String superPower = keyboard.nextLine();
-            System.out.println("Hvilket år udkom din superhelt?");
-            if (!keyboard.hasNextInt()) {
-                String text = keyboard.next();
-                System.out.println(text + " er ikke et gyldigt tal. Prøv igen.");
-            }
-            int yearCreated = keyboard.nextInt();
-            keyboard.nextLine();
-            System.out.println("Er din superhelt et menneske?");
-            String isHuman = keyboard.nextLine();
-            System.out.println("Hvad er din superhelts styrkelevel?");
-            String strength = keyboard.nextLine();
-            System.out.println("Din superhelt er oprettet!");
+            case '1':
 
-            controller.addSuperhero(Name, realName, superPower, yearCreated, isHuman, strength);
-            changedSuperhero = true;
-            createSuperhero();
+                System.out.println("Opret en superhelt");
+                System.out.println("Hvad er navnet på din superhelt?");
+                keyboard.nextLine();
+                String Name = keyboard.nextLine();
+                System.out.println("Hvad er superheltens virkelige navn?");
+                String realName = keyboard.nextLine();
+                System.out.println("Hvad er superheltens superkraft?");
+                String superPower = keyboard.nextLine();
+                System.out.println("Hvilket år udkom din superhelt?");
+                if (!keyboard.hasNextInt()) {
+                    String text = keyboard.next();
+                    System.out.println(text + " er ikke et gyldigt tal. Prøv igen.");
+                }
+                int yearCreated = keyboard.nextInt();
+                keyboard.nextLine();
+                System.out.println("Er din superhelt et menneske?");
+                String isHuman = keyboard.nextLine();
+                System.out.println("Hvad er din superhelts styrkelevel?");
+                String strength = keyboard.nextLine();
+                System.out.println("Din superhelt er oprettet!");
 
-
-        } else if (userchoice == '2') {
-            System.out.println("Hvilket kriterie vil du sortere dine superhelte efter?  ");
-            System.out.println("1. Alfabetisk efter superheltenavn");
-            System.out.println("2. Årstal superhelten er skabt");
-            System.out.println("3. Superheltens styrke");
-            char sortBy = this.keyboard.next().charAt(0);
-            System.out.println("Hvilket kriterie vil du have som anden prioritet?");
-            char sortBySecondary = this.keyboard.next().charAt(0);
-            if (sortBy == sortBySecondary){
-                System.out.println("Dit andet kriterie må ikke være det samme som dit første kriterie." +
-                        "Vælg en anden prioritet igen.");
-                sortBySecondary = this.keyboard.next().charAt(0);
-            }
+                controller.addSuperhero(Name, realName, superPower, yearCreated, isHuman, strength);
+                changedSuperhero = true;
+                createSuperhero();
 
 
+            case '2':
+                System.out.println("Hvilket kriterie vil du sortere dine superhelte efter?  ");
+                System.out.println("1. Alfabetisk efter superheltenavn");
+                System.out.println("2. Årstal superhelten er skabt");
+                System.out.println("3. Superheltens styrke");
+                char sortBy = this.keyboard.next().charAt(0);
+                System.out.println("Hvilket kriterie vil du have som anden prioritet?");
+                char sortBySecondary = this.keyboard.next().charAt(0);
+                if (sortBy == sortBySecondary) {
+                    System.out.println("Dit andet kriterie må ikke være det samme som dit første kriterie." +
+                            "Vælg en anden prioritet igen.");
+                    sortBySecondary = this.keyboard.next().charAt(0);
+                }
 
-            controller.getSuperheroByChoice(sortBy, sortBySecondary);
-            System.out.println(controller.getSuperhero());
-            createSuperhero();
+
+                controller.getSuperheroByChoice(sortBy, sortBySecondary);
+                System.out.println(controller.getSuperhero());
+                createSuperhero();
 
 
-
-
-
-
-
-        } else if (userchoice != '1' && userchoice != '9' && userchoice != '2' && userchoice != '3' && userchoice != '4') {
-            System.out.println("Skriv 1, 2, 3, 4 eller 9 for at vælge. \n");
-            createSuperhero();
-        } else if (userchoice == '3') {
-            searchSuperhero();
-        } else if (userchoice == '4') {
-            editSuperhero();
-        } else if (userchoice == '5') {
-            controller.saveSuperheroes();
-            System.out.println("Dine superhelte er gemt!");
-            createSuperhero();
-
-        } else if (userchoice == '9') {
-            if (changedSuperhero)
+                if (userchoice != '2' && userchoice != '3' && userchoice != '4') {
+                    System.out.println("Skriv 1, 2, 3, 4 eller 9 for at vælge. \n");
+                    createSuperhero();
+                }
+            case '3':
+                searchSuperhero();
+            case '4':
+                editSuperhero();
+            case '5':
                 controller.saveSuperheroes();
-        }
+                System.out.println("Dine superhelte er gemt!");
+                createSuperhero();
 
-        System.out.println("Dine helte er oprettet og dit program afsluttes");
+            case '9':
+                if (changedSuperhero) {
+                    controller.saveSuperheroes();
+                }
+
+                System.out.println("Dine helte er oprettet og dit program afsluttes");
+                System.exit(0);
+        }
 
     }
 
