@@ -1,4 +1,3 @@
-Benny,bobbob,bobobo,1234,ja,8
-Kæmpe@knud,Knud,asd,1234,nej,5
-Sussie@Sejr,Sussie,ghjh,765,ja,2
-batman,batman@sejr,s,2,j,1
+Batman,Bruce@Wayne,Gadgets,1940,Ja,200
+Iron@Man,Tony@Stark,Powersuit,1980,Ja,150
+Superman,Clark@Kent,Stærk,1939,Nej,1000

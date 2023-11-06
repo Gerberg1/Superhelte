@@ -50,8 +50,12 @@ public class Controller {
         return db.getSuperheroByChoice(sortBy, sortBySecondary);
     }
 
-    public String showASuperhero(String specificSearchName) {
+    public Superhero showASuperhero(String specificSearchName) {
         return db.showASuperhero(specificSearchName);
+    }
+
+    public String showAllSuperheroes(){
+        return db.showAllSuperheroes();
     }
 
     public void saveSuperheroes(){
@@ -65,4 +69,5 @@ public class Controller {
     public void deleteSuperhero(String specificSearchName){
         db.deleteSuperhero(specificSearchName);
     }
+
 }

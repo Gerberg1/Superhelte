@@ -20,6 +20,14 @@ public class Database {
         return heroList;
     }
 
+    public String showAllSuperheroes(){
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Superhero p : heroList) {
+           stringBuilder.append(showASuperhero(p.getName())+"\n") ;
+        }
+       return stringBuilder.toString();
+    }
+
     public ArrayList<Superhero> getSuperheroByChoice(char sortBy, char sortBySecondary){
 
         switch (sortBy) {
@@ -67,36 +75,29 @@ public class Database {
 
 
     public String searchSuperhero(String searchName) {
+        StringBuilder stringBuilder = new StringBuilder();
         for (Superhero p : heroList) {
-            if (p.getName().contains(searchName))
-            return p.getName();
+            if (p.getName().toLowerCase().contains(searchName.toLowerCase()))
+            stringBuilder.append(p.getName() + ". ");
             }
-        return null;
+        return stringBuilder.toString();
         }
 
     public void deleteSuperhero(String specificSearchName) {
-        for (Superhero s : heroList) {
-            for (int i = 0; i < heroList.size();i++) {
-                if (heroList.get(i)==s){ break;}
-            if (s.getName().equalsIgnoreCase(specificSearchName)) {
-                if (heroList.get(i)==s){
-                heroList.remove(i);}
-
-                }
-
-            }
+        for (int i = 0; i < heroList.size(); i++) {
+            if (heroList.get(i).equals(showASuperhero(specificSearchName))) {
+                heroList.remove(heroList.get(i));
             }
         }
+    }
 
 
 
 
-
-
-    public String showASuperhero(String specificSearchName) {
+    public Superhero showASuperhero(String specificSearchName) {
         for (Superhero s : heroList) {
             if (s.getName().equalsIgnoreCase(specificSearchName)) {
-                return s.toString();
+                return s;
             }
 
             }
