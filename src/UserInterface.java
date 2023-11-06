@@ -30,6 +30,7 @@ public class UserInterface {
         System.out.println("3. Søg efter en superhelt");
         System.out.println("4. Ændre din superhelte");
         System.out.println("5. Gem dine superhelte");
+        System.out.println("6. Fjern en gemt superhelt");
         System.out.println("9. Afslut");
         char userchoice = keyboard.next().charAt(0);
 
@@ -95,6 +96,26 @@ public class UserInterface {
                 controller.saveSuperheroes();
                 System.out.println("Dine superhelte er gemt!");
                 createSuperhero();
+            case '6':
+                System.out.println("Skriv navnet på den superhelt, du vil søge efter:");
+                String searchName = keyboard.next();
+                System.out.println("Matchende superhelte fundet:" + controller.searchSuperhero(searchName));
+                if (controller.searchSuperhero(searchName) == null) {
+                    System.out.println("Kunne ikke finde: " + searchName);
+                    createSuperhero();
+                }
+                System.out.println("Skriv navnet på den superhelt, du vil slette fra databasen:");
+                keyboard.nextLine();
+                String specificSearchName = keyboard.nextLine();
+                if (controller.showASuperhero(specificSearchName) == null) {
+                    System.out.println("Kunne ikke finde: " + specificSearchName);
+                    createSuperhero();
+                }
+                controller.deleteSuperhero(specificSearchName);
+                System.out.println(specificSearchName +  " er blevet slettet!");
+                controller.saveSuperheroes();
+                changedSuperhero = true;
+                createSuperhero();
 
             case '9':
                 if (changedSuperhero) {
@@ -105,14 +126,6 @@ public class UserInterface {
                 System.exit(0);
         }
 
-    }
-
-    public void showSuperhero() {
-        System.out.println("Superhelte i din database:");
-        for (Superhero s : controller.getSuperhero()) {
-            System.out.println(s);
-        }
-        createSuperhero();
     }
 
     public void searchSuperhero() {

@@ -68,11 +68,26 @@ public class Database {
 
     public String searchSuperhero(String searchName) {
         for (Superhero p : heroList) {
-
+            if (p.getName().contains(searchName))
             return p.getName();
             }
         return null;
         }
+
+    public void deleteSuperhero(String specificSearchName) {
+        for (Superhero s : heroList) {
+            for (int i = 0; i < heroList.size();i++) {
+                if (heroList.get(i)==s){ break;}
+            if (s.getName().equalsIgnoreCase(specificSearchName)) {
+                if (heroList.get(i)==s){
+                heroList.remove(i);}
+
+                }
+
+            }
+            }
+        }
+
 
 
 

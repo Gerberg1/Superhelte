@@ -61,4 +61,8 @@ public class Controller {
     public void addSavedSuperheroes(){
         db.addSavedSuperheroes(db.getSuperhero());
     }
+
+    public void deleteSuperhero(String specificSearchName){
+        db.deleteSuperhero(specificSearchName);
+    }
 }
