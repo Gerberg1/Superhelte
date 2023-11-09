@@ -11,10 +11,9 @@ public class DatabaseTest {
     public void addSuperhero() {
         Database database = new Database();
 
-        // Tilføjelse af ny superhelt
         database.addSuperhero("Superman", "Clark Kent", "Super stærk", 1938, "Ja", "20");
 
-        // Assert, at Superhero-objektet er blevet tilføjet til databasen
+
         Superhero superhero = database.showASuperhero("Superman");
         ArrayList<Superhero> superheroArrayList = new ArrayList<>();
         superheroArrayList.add(superhero);
@@ -42,7 +41,7 @@ public class DatabaseTest {
         Database database = new Database();
 
 
-        // Tilføjelse af ny superhelt
+
         database.addSuperhero("Superman", "Clark Kent", "Super stærk", 1938, "Ja", "20");
         database.addSuperhero("Batman", "Clark Kent", "Super stærk", 1938, "Ja", "20");
         database.addSuperhero("Spiderman", "Clark Kent", "Super stærk", 1938, "Ja", "20");
@@ -51,7 +50,7 @@ public class DatabaseTest {
         Superhero superhero1 = database.showASuperhero("Batman");
         Superhero superhero2 = database.showASuperhero("Spiderman");
 
-        // Assert, at Superhero-objektet er blevet tilføjet til databasen
+
 
         ArrayList<Superhero> superheroArrayList = new ArrayList<>();
         superheroArrayList.add(superhero);
@@ -66,12 +65,11 @@ public class DatabaseTest {
     }
 
     @Test
-    //NameComparator test
     public void yearCreatedComparator() {
         Database database = new Database();
 
 
-        // Tilføjelse af ny superhelt
+
         database.addSuperhero("Superman", "Clark Kent", "Super stærk", 1901, "Ja", "20");
         database.addSuperhero("Batman", "Clark Kent", "Super stærk", 2001, "Ja", "20");
         database.addSuperhero("Spiderman", "Clark Kent", "Super stærk", 1801, "Ja", "20");
@@ -80,7 +78,6 @@ public class DatabaseTest {
         Superhero superhero1 = database.showASuperhero("Batman");
         Superhero superhero2 = database.showASuperhero("Spiderman");
 
-        // Assert, at Superhero-objektet er blevet tilføjet til databasen
 
         ArrayList<Superhero> superheroArrayList = new ArrayList<>();
         superheroArrayList.add(superhero);
@@ -95,12 +92,10 @@ public class DatabaseTest {
     }
 
     @Test
-    //NameComparator test
     public void strengthComparator() {
         Database database = new Database();
 
 
-        // Tilføjelse af ny superhelt
         database.addSuperhero("Superman", "Clark Kent", "Super stærk", 1901, "Ja", "bbb");
         database.addSuperhero("Batman", "Clark Kent", "Super stærk", 2001, "Ja", "aaa");
         database.addSuperhero("Spiderman", "Clark Kent", "Super stærk", 1801, "Ja", "ddd");
@@ -109,7 +104,6 @@ public class DatabaseTest {
         Superhero superhero1 = database.showASuperhero("Batman");
         Superhero superhero2 = database.showASuperhero("Spiderman");
 
-        // Assert, at Superhero-objektet er blevet tilføjet til databasen
 
         ArrayList<Superhero> superheroArrayList = new ArrayList<>();
         superheroArrayList.add(superhero);
